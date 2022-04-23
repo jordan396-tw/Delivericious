@@ -9,7 +9,7 @@ public class BasketTest {
     @Test
     void testAddItemWithQuantityWithPricesToBasket() {
         Basket basket = new Basket();
-        Item item = new Item("Icecream");
+        Item item = new Item("Icecream", "Ice Cream");
         BasketItem basketItem = new BasketItem(item, 4, 3);
 
         basket.addItem(basketItem);
@@ -22,7 +22,7 @@ public class BasketTest {
     @Test
     void testRemoveItemFromBasketWithQuantityGreaterThanOne() {
         Basket basket = new Basket();
-        Item item = new Item("Icecream");
+        Item item = new Item("Icecream", "Ice Cream");
         BasketItem basketItem = new BasketItem(item, 4, 3);
 
         basket.addItem(basketItem);
@@ -37,7 +37,7 @@ public class BasketTest {
     @Test
     void testRemoveItemFromBasketWithQuantityEqualToOne() {
         Basket basket = new Basket();
-        Item item = new Item("Icecream");
+        Item item = new Item("Icecream", "Ice Cream");
         BasketItem basketItem = new BasketItem(item, 4, 1);
 
         basket.addItem(basketItem);
@@ -50,8 +50,8 @@ public class BasketTest {
     @Test
     void duplicateBasket() {
         Basket basket = new Basket();
-        Item icecreamItem = new Item("Icecream");
-        Item seafoodSaladItem = new Item("Seafood salad");
+        Item icecreamItem = new Item("Icecream", "Ice Cream");
+        Item seafoodSaladItem = new Item("Seafood salad", "Salad");
         BasketItem icecreamBasketItem = new BasketItem(icecreamItem, 4, 1);
         BasketItem seafoodSaladbasketItem = new BasketItem(seafoodSaladItem, 12, 1);
 
@@ -65,8 +65,8 @@ public class BasketTest {
     @Test
     void getTotalPrice() {
         Basket basket = new Basket();
-        Item icecreamItem = new Item("Icecream");
-        Item seafoodSaladItem = new Item("Seafood salad");
+        Item icecreamItem = new Item("Icecream", "Ice Cream");
+        Item seafoodSaladItem = new Item("Seafood salad", "Salad");
         BasketItem icecreamBasketItem = new BasketItem(icecreamItem, 4, 1);
         BasketItem seafoodSaladbasketItem = new BasketItem(seafoodSaladItem, 12, 3);
 
@@ -83,7 +83,7 @@ public class BasketTest {
         InMemoryBasketRepository repository = InMemoryBasketRepository.getInstance();
         Basket basket = new Basket();
 
-        Item item = new Item("Expensive Mineral Water");
+        Item item = new Item("Expensive Mineral Water", "Water");
         BasketItem basketItem = new BasketItem(item, 30, 1);
         basket.addItem(basketItem);
 
