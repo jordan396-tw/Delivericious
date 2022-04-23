@@ -1,7 +1,10 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 public class BasketTest {
@@ -75,5 +78,21 @@ public class BasketTest {
         double totalPrice = basket.getTotalPrice();
 
         assertEquals(40, totalPrice);
+    }
+
+    @Test
+    void basketCanBeSaved() {
+        MockDataStore dataStore = MockDataStore.getInstance();
+        Basket basket = new Basket();
+
+        Item item = new Item("Expensive Mineral Water");
+        BasketItem basketItem = new BasketItem(item, 30, 1);
+        basket.addItem(basketItem);
+
+        UUID uuid = dataStore.saveBasket(basket);
+
+        assertEquals(1, dataStore.getStoreSize("baskets"));
+        assertNotNull(dataStore.getBasketById(uuid));
+        assertEquals(basket, dataStore.getBasketById(uuid));
     }
 }
