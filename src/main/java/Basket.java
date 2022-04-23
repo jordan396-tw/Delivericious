@@ -1,7 +1,14 @@
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class Basket {
+public class Basket extends Observable {
     ArrayList<BasketItem> lineItems = new ArrayList<>();
+    private String state = "CREATED";
+
+
+
+    // notifyObservers(this);
+
 
     public void addItem(BasketItem bi) {
         lineItems.add(bi);
@@ -43,5 +50,9 @@ public class Basket {
             totalPrice += (this.lineItems.get(i).getPrice() * this.lineItems.get(i).getQuantity());
         }
         return totalPrice;
+    }
+
+    public ArrayList<BasketItem> getLineItems() {
+        return lineItems;
     }
 }
