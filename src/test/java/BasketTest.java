@@ -5,37 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class BasketTest {
-//    @Test
-//    @Disabled("evaluate if still applicable after introducing BasketItem")
-//    void testAddItemToBasket() {
-//        // Arrange
-//        Basket basket = new Basket();
-//        Item tomatoSoupItem = new Item("tomato soup");
-//
-//        // Act
-//        basket.addItem(tomatoSoupItem);
-//
-//        // Assert
-//        assertEquals(1, basket.lineItems.size());
-//        assertEquals("tomato soup", basket.lineItems.get(0).name);
-//    }
-
-//    @Test
-//    @Disabled("evaluate if still applicable after introducing BasketItem")
-//    void testAddItemWithPricesToBasket() {
-//        // Arrange
-//        Basket basket = new Basket();
-//        Item seafoodSaladItem = new Item("Seafood salad", 12);
-//
-//        // Act
-//        basket.addItem(seafoodSaladItem);
-//
-//        // Assert
-//        assertEquals(1, basket.lineItems.size());
-//        assertEquals("Seafood salad", basket.lineItems.get(0).name);
-//        assertEquals(12, basket.lineItems.get(0).price);
-//    }
-
     @Test
     void testAddItemWithQuantityWithPricesToBasket() {
         Basket basket = new Basket();
