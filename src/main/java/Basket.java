@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Basket {
-    ArrayList<BasketItem> lineItems = new ArrayList<BasketItem>();
+    ArrayList<BasketItem> lineItems = new ArrayList<>();
 
     public void addItem(BasketItem bi) {
         lineItems.add(bi);
