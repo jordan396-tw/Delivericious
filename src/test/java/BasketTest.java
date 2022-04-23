@@ -80,7 +80,7 @@ public class BasketTest {
 
     @Test
     void basketCanBeSaved() {
-        BasketRepository repository = BasketRepository.getInstance();
+        InMemoryBasketRepository repository = InMemoryBasketRepository.getInstance();
         Basket basket = new Basket();
 
         Item item = new Item("Expensive Mineral Water");
